@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct Floating_labelApp: App {
+    
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

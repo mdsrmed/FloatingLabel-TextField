@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var text: String = ""
+    @State private var text1: String = ""
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        VStack(spacing: 15){
+//            Group {
+//                FloatingLabelTextFieldItem(placeholder: "First Name", text: $text)
+//                FloatingLabelTextFieldItem(placeholder: "Last Name", text: $text1)
+//            }
+//
+//            Group {
+//                FloatingBorderLabelTextField(placeholder: "First Name", text: $text)
+//                FloatingBorderLabelTextField(placeholder: "Last Name", text: $text1)
+//            }
+            
+            TextField("", text: $text)
+                .textFieldStyle(CustomTextFieldStyle(placeholder: "First Name", placeholderColor: .blue, placeholderBgColor: .white, isEditing: !text.isEmpty))
+                
         }
+        .animation(.easeOut, value: text)
         .padding()
     }
 }
@@ -24,3 +37,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
